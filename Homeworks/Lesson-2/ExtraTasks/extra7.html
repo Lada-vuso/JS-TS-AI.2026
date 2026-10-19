@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 7</title>
+</head>
+<body>
+    <h1>Екстра-задача 7</h1>
+    <p>Скласти алгоритм, який обчислює цілу і дробову частину даного числа х.<br>
+        Наприклад: число 23,56  => ціла: 23, дробова: 0,56.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let number = Number(prompt('Введіть значення числа в форматі 0.00', "0.00"));  // Вводимо число
+
+        // Знаходимо результат
+        let integerPart =  Math.trunc(number);                                          //Розраховуємо цілу частину
+        let fractionalPart = number - integerPart;                                     //Розраховуємо дробову частину
+
+
+        //Виводимо результат
+        document.write(`В числі ${number} <br>
+                        ціла: ${integerPart} <br>
+                        дробова: ${fractionalPart.toFixed(2)}
+                        `);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 6</title>
+</head>
+<body>
+    <h1>Екстра-задача 6</h1>
+    <p>Дано три дійсні змінні a, b і c.  <br>
+        Скласти  алгоритм, який міняє місцями значення цих змінних наступним чином: <br>
+        змінна a набуває значення змінної b, <br>
+        змінна b набуває значення змінної c, <br>
+        а змінна  c – попереднє значення змінної a.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let a = Number(prompt('Введіть значення a', 0));  // Вводимо змінну а
+        let b = Number(prompt('Введіть значення b ', 0));;  // Вводимо змінну b
+        let c = Number(prompt('Введіть значення c', 0));;  // Вводимо змінну c
+
+        // Знаходимо результат
+        const oldA = a;                                                 
+        a = b;
+        b = c; 
+        c = oldA;    
+
+
+        //Виводимо результат
+        document.write(`Тепер змінна a = ${a} <br>
+                        змінна b = ${b} <br>
+                        змінна c = ${c}
+                        `);
+    </script>
+    
+</body>
+</html>

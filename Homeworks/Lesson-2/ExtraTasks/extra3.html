@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 3</title>
+</head>
+<body>
+    <h1>Екстра-задача 3</h1>
+    <p>З клавіатури вводяться вартість одиниці та кількість одиниць двох товарів. <br>
+        Вивести на екран вартість кожного з видів товарів окремо і загальну вартість.</p>
+    <script>
+        //Вводимо необхідні дані
+        let price1 = Number(prompt('Введіть ціну першого товару', 0));              // Ціна першого товару
+        let quantity1 = parseInt(prompt('Введіть кількість першого товару', 0));    // Кількість першого товару
+
+        let price2 = Number(prompt('Введіть ціну другого товару', 0));              // Ціна другого товару
+        let quantity2 = parseInt(prompt('Введіть кількість другого товару', 0));    // Кількість другого товару
+
+        // Знаходимо результат
+        let total1 = price1 * quantity1;                                              // Вартість першого товару
+        let total2 = price2 * quantity2;                                              // Вартість другого товару
+        let grandTotal = total1 + total2;                                    // Загальна сума чека
+
+        //Виводимо результат
+        document.write(`Вартість першого товару складає ${total1.toFixed(2)} грн. <br>
+                        Вартість другого товару складає ${total2.toFixed(2)} грн. <br>
+                        Загальна сума чека складає ${grandTotal.toFixed(2)} грн.
+                        `);
+    </script>
+    
+</body>
+</html>

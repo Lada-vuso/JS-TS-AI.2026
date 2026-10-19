@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 8</title>
+</head>
+<body>
+    <h1>Екстра-задача 8</h1>
+    <p>Розробити програму (не використовувати if), яка за номером року Y визначає <br>
+        номер століття C (врахувати, що початком XX століття був 1901, а не 1900 рік). 
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let year = Number(prompt('Введіть рік', 0));    // Вводимо рік
+
+        // Знаходимо результат
+        let century =  Math.ceil(year/100);             //Розраховуємо століття
+    
+        //Виводимо результат
+        document.write(`Введений ${year} рік належить до ${century} століття
+                        `);
+    </script>
+    
+</body>
+</html>

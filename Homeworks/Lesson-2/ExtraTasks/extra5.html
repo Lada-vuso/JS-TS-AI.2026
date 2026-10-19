@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 5</title>
+</head>
+<body>
+    <h1>Екстра-задача 5</h1>
+    <p>Визначити, яку платню одержить на фірмі сумісник за виконану роботу, <br>
+        якщо йому нараховано S грн., а податок становить 20%.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let grossSalary = Number(prompt('Введіть нараховану зарплату до сплати податку', 0));  // Нарахована зарплата до сплати податку
+        const taxRate = 0.2;      // Ставка податку (20%)
+
+        // Знаходимо результат
+        let taxAmount = grossSalary * taxRate;                                                 // Сума податку
+        let netSalary = grossSalary - taxAmount;                                               // Зарплата після сплати податку 
+
+        //Виводимо результат
+        document.write(`Сумісник отримає за виконану роботу ${netSalary.toFixed(2)} грн. <br>
+                        Сума податку складає ${taxAmount.toFixed(2)} грн`);
+    </script>
+    
+</body>
+</html>

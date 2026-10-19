@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 1</title>
+</head>
+<body>
+    <h1>Екстра-задача 1</h1>
+    <p>
+        Дано ширину екрана та кількість елементів, які повинні бути відображені у рядку. <br>
+        Визначити ширину елементів, які повинні бути відображені у цьому рядку.
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let widthMonitor = parseInt(prompt('Введіть ширину екрана, в мм.', 0))
+        let numberElements = parseInt(prompt('Введіть кількість елементів в рядку, шт.', 0))
+
+        // Знаходимо результат
+        let widthElements = widthMonitor/numberElements
+
+        //Виводимо результат
+        document.write ("Ширина елементів в цьому рядку буде "+ widthElements + " мм.")        
+    </script>
+    
+</body>
+</html>

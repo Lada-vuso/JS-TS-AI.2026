@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 4</title>
+</head>
+<body>
+    <h1>Екстра-задача 4</h1>
+    <p>З клавіатури вводиться вік дитини. <br>
+        Вивести на екран через скільки років вона буде відвідувати садочок, <br>
+        піде у школу, закінчить школу, вступить і закінчить університет
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let childAge = Number(prompt('Введіть вік дитини, в форматі **', 0)); // Поточний вік дитини
+        
+        // Знаходимо результат
+        let yearsToKindergarten = 3 - childAge;                               // Через скільки років піде в садочок
+        let yearsToSchool = 6 - childAge;                                     // Через скільки років піде до школи
+        let yearsToSchoolGraduation = yearsToSchool + 12;                     // Через скільки років закінчить школу
+        let yearsToUniversity = yearsToSchoolGraduation;                      // Через скільки років вступить до університету
+        let yearsToUniversityGraduation = yearsToSchoolGraduation + 5;        // Через скільки років закінчить університет
+
+        //Виводимо результат
+        document.write(`Якщо дитині зараз ${childAge} років, то <br>
+                        через ${yearsToKindergarten} рік(-ока) вона піде в садочок, <br>
+                        через ${yearsToSchool} роки(-ів) вона піде до школи <br>
+                        і через ${yearsToSchoolGraduation} років вона закінчить цю школу, <br>
+                        якщо зразу вступить до університету, то це буде також через ${yearsToUniversity} років, <br>
+                        і через ${yearsToUniversityGraduation} рік(-ів/-ока) дитина отримає диплом університету.
+                        `);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 9</title>
+</head>
+<body>
+    <h1>Екстра-задача 9</h1>
+    <p>Скласти програму для розв’язування задачі: <br>
+        йде N-а секунда доби, <br>
+        визначити скільки повних годин і повних хвилин пройшло до цього моменту.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let totalSeconds = Number(prompt('Введіть номер секунди доби (від 1 до 86400)', 0));  // Вводимо N-а секунду доби
+                
+        // Знаходимо результат
+        let hours = parseInt((totalSeconds - 1) / 3600);                                        // Кількість повних годин
+        let minutes = ((totalSeconds - 1) - (hours * 3600))/60 ;                                // Кількість залишкових хвилин
+
+        //Виводимо результат
+        document.write(`Від початку доби пройшло ${hours} годин і ${Math.floor(minutes)} хвилин`);
+    </script>
+    
+</body>
+</html>
