@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 5</title>
+</head>
+<body>
+    <h1>Задача 5</h1>
+    <p>З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). <br>
+        Вивести на екран назву транспортного засобу, яким він може керувати.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let licenseCategory = prompt("Введіть категорію посвідчення (A, B, C)");  // Введення категорії водія   
+        
+
+        // Знаходимо результат і виводимо результат
+        if (licenseCategory === "A") {
+            document.write(`Можна керувати мотоциклом`);
+        } else if (licenseCategory === "B"){
+            document.write(`Можна керувати легковим автомобілем`);
+        } else if (licenseCategory === "C"){
+            document.write(`Можна керувати вантажним автомобілем`);
+        }  else {
+            document.write(`Це точна? Я не знаю такої категорії((((`);
+        }
+        
+    </script>
+    
+</body>
+</html>

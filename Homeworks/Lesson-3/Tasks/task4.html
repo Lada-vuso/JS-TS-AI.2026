@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 4</title>
+</head>
+<body>
+    <h1>Задача 4</h1>
+    <p>З клавіатури вводиться вік людини. <br>
+        Вивести на екран ким він є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let age = Number(prompt("Введіть вік людини, старше за 3 роки", 0));  // Введення віку людини    
+        
+
+        // Знаходимо результат і виводимо результат
+        if (age >= 3 && age < 6 ) {
+            document.write(`Дитина відвідує садочок`);
+        } else if (age < 18 ){
+            document.write(`Дитина є школяром`);
+        } else if (age < 23 ){
+            document.write(`Людина є студентом`);
+        } else if (age < 65 ){
+            document.write(`Людина є працівником`);
+        }  else {
+            document.write(`Людина є пенсіонером`);
+        }
+        
+    </script>
+    
+</body>
+</html>
