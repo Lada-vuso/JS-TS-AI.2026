@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 3</title>
+</head>
+<body>
+    <h1>Екстра-задача 3</h1>
+    <p>
+        Комп’ютер загадує число від 1 до 10. <br> 
+        Двоє користувачів надають свої відповіді. <br> 
+        Виграє той, у кого число знаходиться ближче до загаданого комп’ютером числа.
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let secretNumber =  Math.floor(Math.random() * 10) + 1                                 // Генеруємо число
+        
+        let user1Number = Number(prompt('Перший гравець, введіть ваше число', 0))              // Вводимо число користувача 1
+        let user2Number = Number(prompt('Другий гравець, введіть ваше число', 0))              // Вводимо число користувача 2
+
+        // 2.Робимо перевірку віддаленості кожного числа
+        let resultat1 = Math.abs (user1Number - secretNumber)
+        let resultat2 = Math.abs (user2Number - secretNumber)
+
+
+        // 3.Знаходимо і виводимо результат
+        if (resultat1 > resultat2 )  {
+            document.write(`Вітаю другого ігрока з числом ${user2Number}, він ближче до загаданого ${secretNumber}, ніж перший ігрок з числом ${user1Number} `)
+            } 
+            else if (resultat2 > resultat1 ){
+                document.write(`Вітаю першого ігрока з числом ${user1Number}, він ближче до загаданого ${secretNumber}, ніж другий ігрок з числом ${user2Number} `)
+            } 
+            else {document.write(`Перемогла дружба, бо обидва числа - перше ${user1Number} і друге ${user2Number} <br>
+                однаково віддалені від загаданого ${secretNumber}`)
+            }
+    </script>
+    
+</body>
+</html>

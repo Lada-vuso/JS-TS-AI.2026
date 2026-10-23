@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 11</title>
+</head>
+<body>
+    <h1>Екстра-задача 11</h1>
+    <p>Дано поточну кількість годи, хвилин, секунд (як на годиннику). <br>
+        Визначити 1) яка кількість секунд буде на годиннику через N секунд.<br>
+        2) яка кількість хвилин буде на годиннику через N секунд, X хвилин.
+    </p>
+    <script>
+        //Вводимо необхідні дані
+        let currentHours = Number(prompt('Введіть кількість годин', 0));;       // Поточні години
+        let currentMinutes = Number(prompt('Введіть кількість хвилин', 0));;    // Поточні хвилини
+        let currentSeconds = Number(prompt('Введіть кількість секунд', 0));;    // Поточні секунди
+
+        let addedSeconds = Number(prompt('Введіть кількість секунд, що додано', 0));;    // Додані секунди
+        let addedMinutes = Number(prompt('Введіть кількість хвилин, що додано', 0));;    // Додані хвилини        
+                
+        // Знаходимо результат
+        let newSeconds = Math.floor((currentSeconds + addedSeconds) % 60); // Додаємо секунди
+        let newMinutes = (currentMinutes + addedMinutes + 
+                        Math.floor((currentSeconds + addedSeconds) / 60)) % 60; //Додаємо хвилини
+        let newHours = (currentHours + 
+                        Math.floor((currentMinutes + addedMinutes + 
+                        Math.floor((currentSeconds + addedSeconds) / 60)) / 60)) % 24;    // Додаємо години
+
+        //Виводимо результат
+        document.write(`${newHours}:${newMinutes}:${newSeconds}`);    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 7</title>
+</head>
+<body>
+    <h1>Екстра-задача 7</h1>
+    <p>
+        Гра в кості. Правила гри:<br>
+            1) користувач може кинути кості не більше двох разів (користувач сам вирішує чи робити, чи не робити другий кидок);<br>
+            2) якщо випадає парне число, то кількість балів збільшується на це число;<br>
+            3) якщо випадає непарне число, то кількість балів зменшується на це число;<br>
+            4) виграє той, у кого кількість балів більша.
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let player1Score = 0
+        let player2Score = 0
+
+        let diceRoll = Math.floor(Math.random() * 6) + 1                                 // Випадає перше число першому гравцю
+        alert(`Першому гравцю випало ${diceRoll}`)                                       // повідомляємо результат
+    
+        player1Score += diceRoll
+
+        let secondRollChoice = prompt("Кинути кубик вдруге? Введіть 'так'").trim().toLowerCase()       // пропонуємо кинути вдруге
+    
+        if (secondRollChoice === "так") {                                                     // перевіряємо відповідь на другий кидок і результат 
+            diceRoll = Math.floor(Math.random() * 6) + 1
+            alert(`Першому гравцю випало ${diceRoll}`) 
+            if (diceRoll % 2 === 0) {
+                player1Score += diceRoll
+                } else {
+                    player1Score -= diceRoll
+                }
+            }
+
+        alert(`Гравець 1 має  ${player1Score}`)
+
+        diceRoll = Math.floor(Math.random() * 6) + 1                                       // Випадає перше число другому гравцю
+        alert(`Другому гравцю випало ${diceRoll}`)  
+            
+        player2Score += diceRoll
+
+        secondRollChoice = prompt("Кинути кубик вдруге? Введіть 'так'").trim().toLowerCase()       // пропонуємо кинути вдруге
+    
+        if (secondRollChoice === "так") {                                                  // перевіряємо відповідь на другий кидок і результат 
+            diceRoll = Math.floor(Math.random() * 6) + 1
+            alert(`Другому гравцю випало ${diceRoll}`) 
+            if (diceRoll % 2 === 0) {
+                player2Score += diceRoll
+                } else {
+                    player2Score -= diceRoll
+                }
+        }
+        alert(`Гравець 2 має  ${player2Score}`)
+
+        if (player1Score > player2Score) {
+            alert(`Гравець 1 виграв`)
+            } else if (player1Score < player2Score) {
+                alert(`Гравець 2 виграв`)
+            } else {
+                alert(`перемогла дружба`)
+            }   
+    
+    </script>
+    
+</body>
+</html>

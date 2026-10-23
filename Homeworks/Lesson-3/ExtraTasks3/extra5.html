@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 5</title>
+</head>
+<body>
+    <h1>Екстра-задача 5</h1>
+    <p>
+        Модифікувати попередню задачу з можливістю після пострілу переміщення корабля <br>
+        у випадковим чином вибрану сусідню клітинку (якщо звичайно корабель не було потоплено за першим разом).
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let cellCount = Number(prompt('Введіть кількість клітинок поля', 0))
+        let shipPosition =  Math.floor(Math.random() * cellCount) + 1                          // Задаємо позицію корабля рандомно
+        
+        let shot = Number(prompt(`Робіть постріл, від 1 до ${cellCount}`, 1))                  // Робимо постріл
+        let direction
+ 
+        if (shot === shipPosition) {                                                           // Визначити результат першого пострілу
+            alert(`Потопив`)                                                                    
+            } else {
+                if (shot === shipPosition + 1 || shot === shipPosition -1){
+                    alert(`Поранив`) 
+                } else {
+                    alert(`Промах`)
+                }
+
+                direction = Math.floor(Math.random() * 2)                                      // Випадково вибираємо напрямок зміщення
+                if (shipPosition === 1) {                                                      // перевіряємо, чи не в першій клітинці корабель
+                    shipPosition += 1
+                } else if (shipPosition === cellCount) {                                       // перевіряємо, чи не в останній клітинці корабель
+                    shipPosition -= 1
+                } else if (direction === 0) {                                                  //переміщуємося вправо чи вліво
+                    shipPosition -= 1
+                    } else {
+                        shipPosition += 1
+                    }
+                alert(`Обстріл! Терміново змінити координати!`)                                // повідомляємо про переміщення
+            
+
+                shot = Number(prompt(`Робіть постріл, від 1 до ${cellCount}`, 1))              // Запросити другий постріл
+                if (shot === shipPosition) {                                                   // Перевірити його результат
+                    alert(`Потопив`) 
+                    } else if (shot === shipPosition + 1 || shot === shipPosition - 1 ){
+                        alert(`Поранив, але гра закінчена`)
+                    } else {
+                        alert(`Повз і більше пострілів немає`)
+                    }                        
+                }
+                    
+    </script>
+    
+</body>
+</html>

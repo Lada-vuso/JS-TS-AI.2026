@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екстра-задача 2</title>
+</head>
+<body>
+    <h1>Екстра-задача 2</h1>
+    <p>
+        Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок повинен знаходитися в межах від 1 до 100). <br> 
+        Користувач вводить число і виграє, <br>
+        якщо число знаходиться у цьому проміжку, <br>
+        або розташоване від нього (від лівого або правого краю) не більше ніж на 10.
+    </p>
+    <script>
+        //1.Вводимо необхідні дані
+        let startNumber =  Math.floor(Math.random() * 100) + 1;                // Генеруємо початок проміжку
+        let endNumber = Math.floor(Math.random() * 100) + 1;                   // Генеруємо кінець проміжку
+        let userNumber = Number(prompt('Введіть ваше число', 0));              // Вводимо число користувача
+
+        // 2.Робимо перевірку кордонів
+        if (startNumber > endNumber) {
+            let tempNumber = startNumber;
+            startNumber = endNumber;
+            endNumber = tempNumber;
+        }
+
+        // 3.Знаходимо і виводимо результат
+        if (userNumber >= (startNumber - 10) && userNumber <= (endNumber + 10))  {
+            document.write(`Вітаю, ти вгадав! Проміжок був ${startNumber} - ${endNumber}`);
+            } else {
+                document.write(`На жаль, ти не вгадав! Проміжок був ${startNumber} - ${endNumber}`);
+            }       
+    </script>
+    
+</body>
+</html>
