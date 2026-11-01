@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 11</title>
+</head>
+<body>
+    <h1>Задача 11</h1>
+    <p>Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+        //Вводимо необхідні дані
+        let startNumber = Number (prompt ("Введіть початок діапазону", 0))                              // Питаємо початок діапазону
+        let endNumber = Number (prompt ("Введіть кінець діапазону", 0))                                 // Питаємо кінець діапазону
+        let oddSum = 0
+        let oddCount = 0
+        let resultMessage = ""
+
+        // Знаходимо результат і виводимо результат
+        if (startNumber > endNumber ) {
+            let tempNumber = startNumber
+            startNumber = endNumber
+            endNumber = tempNumber
+        }
+
+        for (let num = startNumber + 1; num < endNumber; num++) {
+            if ( num % 2 !== 0 ) { 
+                oddSum += num
+                oddCount ++                   
+                if (oddCount === 5) {
+                    break                    
+                    }
+                }
+            }
+
+        if (oddCount < 5) {
+            resultMessage = `в заданому діапазоні знайдено лише ${oddCount} непарних чисел.  `
+        }
+
+        resultMessage += `Сума непарних дорівнює ${oddSum}`
+
+        alert(resultMessage)
+        }
+    </script>    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 7</title>
+</head>
+<body>
+    <h1>Задача 7</h1>
+    <p>Вивести на екран N абзаців (N вводиться користувачем) за зразком:
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+        //Вводимо необхідні дані
+        let sectionCount = Number ( prompt ("Введіть кількість абзаців", 0))                                   // Питаємо кількість абзаців
+        
+            for (let sectionNumber = 1; sectionNumber <= sectionCount; sectionNumber++) {                                                             
+                document.write("<section>")
+                    document.write("<h1>")
+                        document.write(`Заголовок ${sectionNumber}`)
+                    document.write("</h1>")
+                
+                for (let paragraphNumber = 1; paragraphNumber <= sectionNumber; paragraphNumber++) {                                                             
+                    document.write("<p>")
+                    document.write(`Розділ ${sectionNumber}, параграф ${paragraphNumber} `)
+                    document.write("</p>")
+                }
+                document.write("</section>")
+                document.write("<hr>")
+            }        
+        }
+    </script>    
+</body>
+</html>

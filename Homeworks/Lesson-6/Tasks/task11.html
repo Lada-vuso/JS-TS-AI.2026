@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 11</title>
+</head>
+<body>
+    <h1>Задача 11</h1>
+    <p>Вивести на екран усі двоцифрові числа, у яких перша цифра є більшою або рівною за другу
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let resultMessage = ""
+
+            // Знаходимо результат і виводимо результат
+            for (let num = 10; num < 100; num++) {
+                let units = num % 10 
+                let tens = (num - units) / 10
+
+                if (tens >= units) {
+                    resultMessage += `${num}, `
+                }
+            }
+
+            resultMessage = resultMessage.slice(0, -2)
+            document.write(resultMessage)
+        }
+    </script>    
+</body>
+</html>

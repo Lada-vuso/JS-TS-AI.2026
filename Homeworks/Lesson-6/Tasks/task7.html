@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 7</title>
+</head>
+<body>
+    <h1>Задача 7</h1>
+    <p>Інвестор вклав S тис. грн на 20 років під 20% річних, а потім на 17 років під 27% річних. <br>
+        Визначити за допомогою циклів суму, яку він одержить.
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let initialCapital = Number ( prompt ("Введіть початкову суму інвестиції, в тис.грн.", 0))   // Ввводимо суму початкову
+            let firstInterestRate = 0.20                                                                 // Відсоткова ставка на перші 20 років
+            let secondInterestRate = 0.27                                                                // Відсоткова ставка на наст 17 років
+            let balance = initialCapital
+
+            // Знаходимо результат і виводимо результат
+            for (let year = 1; year <= 20; year++) {                                                        // Нарахування відсотків за 20 років
+                balance = balance+ (balance * firstInterestRate)
+                document.write(`В ${year} році сума складе ${balance.toFixed(2)} тис.грн. <br>`)
+            }
+
+            for (let year = 1; year <= 17; year++) {                                                        // Нарахування відсотків за 17 років
+                balance = balance + (balance * secondInterestRate)
+                document.write(`В ${year + 20} році сума складе ${balance.toFixed(2)} тис.грн. <br>`)
+            }
+            
+            document.write(`Вкладник за 37 років отримає ${balance.toFixed(2)} грн.`)
+        }
+    </script>    
+</body>
+</html>

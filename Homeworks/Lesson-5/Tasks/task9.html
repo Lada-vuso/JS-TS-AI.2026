@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 9</title>
+</head>
+<body>
+    <h1>Задача 9</h1>
+    <p>Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+        //Вводимо необхідні дані
+            alert ("Загадайте число від 1 до 10")
+            let isGuessed = false
+            let computerGuess
+
+            do {
+                computerGuess = 1 + Math.floor (Math.random() * 10)
+                isGuessed = confirm(`Ви загадали число ${computerGuess}?`)
+            } while (!isGuessed)
+        }
+    </script>    
+</body>
+</html>
