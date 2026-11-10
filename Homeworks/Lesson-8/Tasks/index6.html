@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 6</title>
+</head>
+<body>
+    <h1>Задача 6</h1>
+    <p>Дано послідовність цін товарів та назв (у окремих масивах). <br>
+        Вивести на екран ті, які може собі дозволити користувач (кількість грошей задається).<br>
+        Приклад збереження даних <br>
+        let productsPrices = [1000, 20, 31]<br>
+        let productsTitles = [‘cheese’, ‘juice’, ‘bread’]<br>
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let productsPrices = [1000, 20, 31]                                                       //Масив цін
+            let productsTitles = ["cheese", "juice", "bread"]                                         //Масив назв товарів
+            let budget = Number(prompt("Скільки грошей у вас є?", 0))                                 //Доступна сума грошей
+            let resultMessage = []
+
+                // Обробка даних
+            for (let index = 0; index < productsPrices.length; index++) {
+                if (productsPrices[index] <= budget) {
+                    resultMessage.push(productsTitles[index])
+                } else {
+                resultMessage = "жодного товару, нажаль"
+                }
+            }          
+
+
+            // Виводимо результат
+            document.write(`З Вашим бюджетом ${budget} грн. Вам доступні такі товари: ${resultMessage.join(", ")}`) 
+        }
+    </script>    
+</body>
+</html>

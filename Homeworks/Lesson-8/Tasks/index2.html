@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 2</title>
+</head>
+<body>
+    <h1>Задача 2</h1>
+    <p>Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:<br>
+            номери днів, протягом яких кількість відвідувачів була меншою за 20;<br>
+            номери днів, коли кількість відвідувачів була мінімальною;<br>
+            номери днів, коли кількість відвідувачів була мінімальною;<br>
+            загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let visitors = [25, 18, 32, 12, 32, 45, 12]
+
+            let min20VisitorsResult = []
+            let minVisitors = visitors[0]	                              // Найменша кількість відвідувачів
+            let minVisitorsResult = []
+            let maxVisitors = visitors[0]                                 // Найбільша кількість відвідувачів
+            let maxVisitorsResult = []
+            let workdayTotal = 0	                                       // Сума відвідувачів за понеділок–п'ятницю
+            let weekendTotal = 0	                                       // Сума відвідувачів за суботу й неділю
+            
+            // Обробка даних
+            for (let index = 0; index < visitors.length; index++) {
+                if (visitors[index] < 20) {
+                    min20VisitorsResult.push(index + 1)
+                } 
+
+                if (visitors[index] < minVisitors){ 
+                    minVisitors = visitors[index]
+                    minVisitorsResult = [index + 1]
+                } else if (visitors[index] === minVisitors) {
+                    minVisitorsResult.push(index + 1)
+                }
+
+                if (visitors[index] >  maxVisitors){ 
+                    maxVisitors = visitors[index]
+                    maxVisitorsResult = [index + 1]
+                } else if (visitors[index] === maxVisitors) {
+                    maxVisitorsResult.push(index + 1)
+                }
+
+                if (index <5) {
+                    workdayTotal += visitors[index]
+                } else {
+                weekendTotal += visitors[index]
+                }    
+            }          
+
+
+            // Виводимо результат
+            document.write(`Менше 20 відвідувачів було в ${min20VisitorsResult} день/дні <br>
+                            Найменша кількість відвідувачів була в ${minVisitorsResult} день/дні <br>
+                            Найбільша кількість відвідувачів була в ${maxVisitorsResult} день/дні <br>
+                            Сума відвідувачів за понеділок–п'ятницю складає ${workdayTotal}<br>
+                            Сума відвідувачів за суботу й неділю складає ${weekendTotal}`) 
+        }
+    </script>    
+</body>
+</html>

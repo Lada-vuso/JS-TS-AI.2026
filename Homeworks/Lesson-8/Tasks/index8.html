@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 8</title>
+</head>
+<body>
+    <h1>Задача 8</h1>
+    <p>Дано одновимірний масив, у якому зберігається певна виграшна сума <br>
+        (елементи заповнюються випадковим чином значеннями від -500 до 500). <br>
+        Надаючи користувачу можливість вибирати номери елементів  (поки він не відмовиться). <br>
+        Знаходити сумарний виграш.
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані 
+            let winnings = []      
+            let cellCount = Number (prompt ("Виберіть кількість ячеєк з сумами", 1))                            // обираємо розмір масива
+
+            // Обробка даних
+            if (cellCount % 1 === 0 &&                                                                    // Чи число ціле      
+                cellCount >= 1){                                                                          // Чи число не менше 1
+                winnings.length =  cellCount   
+            
+            let totalWinnings = 0
+            let continueGame = true
+            
+            for (let index = 0; index < winnings.length; index++) {
+                winnings[index] = Math.floor(Math.random() * 1001) - 500                                        // Заповнюємо випадковими значеннями від -500 до +500
+            } 
+            
+            do {
+                let chosenNumber = Number (prompt (`Виберіть номер ячійки, від 1 до ${winnings.length}`, 1))    // Користувач вибирає номер елемента
+                if (chosenNumber % 1 === 0 &&                                                                   // Чи число ціле      
+                    chosenNumber >= 1 &&                                                                        // Чи число не менше 1
+                    chosenNumber <= winnings.length) {                                                          // Чи число не більше масиву
+                    totalWinnings += winnings[chosenNumber - 1]                                                 // Додаємо виграш до загальної суми
+                    continueGame = confirm("Бажаєте продовжити гру?")                                           // Запитуємо, чи граємо далі
+                    } else {
+                        alert ("Некоректне значення")
+                    }                
+                } while (continueGame)
+                
+            // Виводимо результат
+                document.write(`Ви набрали ${totalWinnings} балів <br> 
+                                В ячейках були ${winnings.join(", ")}`) 
+            
+            } else {
+                alert ("Некоректне значення")
+            }
+        }
+    </script>    
+</body>
+</html>

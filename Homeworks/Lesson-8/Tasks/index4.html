@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 4</title>
+</head>
+<body>
+    <h1>Задача 4</h1>
+    <p>Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які :<br>
+            •	починаються на букву «А» (для отримання першої літери можна також звернутися <br>
+                до номера авто як string ніби як до масиву за номером 0 - autoNum[0]-перша літера);<br>
+            •	перша і остання літери співпадають;<br>
+            •	складаються з більше ніш 5 символів;
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let carNumbers = ["А1234А", "В5678К", "А12345", "К123К"]
+            let startsWithACount = 0
+            let sameFirstLastCount = 0
+            let longerThan5Count = 0
+            
+            // Обробка даних
+            for (let index = 0; index < carNumbers.length; index++) {
+                if (carNumbers[index][0] === "А"){ 
+                    startsWithACount++
+                }
+                if (carNumbers[index][0] === carNumbers[index][carNumbers[index].length - 1]){ 
+                    sameFirstLastCount++
+                }
+                if (carNumbers[index].length > 5){ 
+                    longerThan5Count++
+                }               
+            }
+
+            // Виводимо результат
+            document.write(`На букву А починається ${startsWithACount} номерів <br>
+                            Перша і остання літера співпадає в ${sameFirstLastCount} номерів <br>
+                            Складаються більше ніж з 5 символів ${longerThan5Count} номерів`) 
+        }
+    </script>    
+</body>
+</html>

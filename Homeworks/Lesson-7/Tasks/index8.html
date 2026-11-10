@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 8</title>
+</head>
+<body>
+    <h1>Задача 8</h1> 
+    <p>Створити функцію, яка виводить банер <br>
+        (у функцію передаються: зображення, заголовок та посилання, <br>
+        куди переходимо при кліку на зображення <br>
+        (тег img повине знаходитись у середині тега a: <a> <img src=”шлях”> </a>
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let imagePath = "./picture.jpg"
+            let bannerTitle = "Мій банер"
+            let link = "https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D0%B2%D1%96%D1%80%D0%BA%D0%B0"   
+                        
+            // Обробка даних
+            function showBanner(imagePath, bannerTitle, link) {
+                document.write (`<h2>${bannerTitle}</h2>\n`)
+                document.write (`<a href="${link}">\n`)
+                document.write (`<img src="${imagePath}" alt="${bannerTitle}">\n`)
+                document.write (`</a>\n`)
+            }
+                
+            
+                // Виводимо результат
+            showBanner(imagePath, bannerTitle, link)
+        }
+    </script>    
+</body>
+</html>

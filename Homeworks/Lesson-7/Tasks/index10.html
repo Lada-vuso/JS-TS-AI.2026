@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 10</title>
+</head>
+<body>
+    <h1>Задача 10</h1> 
+    <p>Дано покази температур (довільна кількість). <br>
+        Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури. 
+    </p>
+    <script>
+        if (confirm("Почати тестування?")) {
+            //Вводимо необхідні дані
+            let temperatureCount = Number(prompt("Скільки температур ви хочете ввести?", 0))     
+                        
+            // Обробка даних
+            function getAveragePositiveTemperature(temperatureCount){
+                let positiveCount = 0
+                let positiveSum = 0
+                let averageTemperature
+
+                for (let i = 1; i <= temperatureCount; i++) {
+                    let temperature = Number(prompt(`Введіть температуру №${i}`))
+                
+                    if (temperature > 0) {
+                        positiveCount ++
+                        positiveSum += temperature
+                    
+                    }                     
+                }  
+                if (positiveCount > 0 ){
+                        averageTemperature = positiveSum / positiveCount
+                    } else {
+                        return "Додатних температур немає"
+                    }   
+                return averageTemperature.toFixed(1)   
+            }
+            
+                // Виводимо результат
+            document.write (getAveragePositiveTemperature(temperatureCount))
+        }
+    </script>    
+</body>
+</html>
