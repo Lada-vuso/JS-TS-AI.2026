@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ №9</title>
+</head>
+<body>
+    <h1>ДЗ №9</h1>
+
+    <script>
+
+        //1. Користувач вводить кількість елементів. Створити масив, що складається з вказаної кількості елементів заповнених нулями.
+
+        let elementCount = Number(prompt("Введіть кількість елементів", 1))
+        let numbers = []
+        numbers.length = elementCount
+        numbers.fill(0)
+        document.write(numbers)
+
+
+
+
+        //2. Користувач вводить кількість елементів. Створити масив, у якому перша половина заповнена 1-цями, а друга заповнена 7-ками.
+
+        /* let elementCount = Number(prompt("Введіть кількість елементів", 1))
+        let numbers = []
+        numbers.length = elementCount
+        let halfNumbersLength = Math.floor(elementCount / 2)                                                        // половина довжини
+                
+        numbers.fill(1, 0, halfNumbersLength)
+        numbers.fill(7, halfNumbersLength)
+        document.write(numbers) */
+
+
+
+
+        //3. Користувач вводить кількість елементів. Створити масив, у якому перші 5 елементів заповнені 1-цями, а інші до кінця масиву заповнені 7-ками.
+
+        /* let elementCount = Number(prompt("Введіть кількість елементів, мінімум 5", 5))
+        let numbers = []
+        numbers.length = elementCount
+                
+        numbers.fill(1, 0, 5)
+        numbers.fill(7, 5)
+        document.write(numbers) */
+
+
+
+
+        //4.Дано масив елементів. Вивести на екран елементи, що більші за 100
+        /* let numbers = new Array (10)                                                                      // Зробимо масив
+        
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor (Math.random () * 1000 - 500)          
+        }
+        document.write(`Усі числа: ${numbers}<br>`)
+
+        for (let num of numbers) {                                                                           //Вирішуємо задачу
+            if (num > 100) {
+                document.write(`${num} `)
+            }
+        }  */    
+    
+
+
+        //5.Дано масив елементів. Знайти добуток додатних елементів
+        
+        /* let numbers = new Array (5)                                                                        // Зробимо масив
+        let result = 1
+        let positiveCount = 0
+        
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor (Math.random () * 10 - 5)          
+        }
+        document.write(`Усі числа: ${numbers}<br>`)
+
+        for (let num of numbers) {                                                                            //Вирішуємо задачу
+            if (num > 0) {
+                result *= num
+                positiveCount += 1
+            }
+        }
+
+        if (positiveCount) {
+            document.write(result)
+        } else {
+            document.write(`Позитивних чисел нема`)
+        }  */     
+
+
+
+        //6.Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2
+
+        /* let numbers = new Array (10)                                                                           // Зробимо масив
+                
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor (Math.random () * 10 +1)          
+        }
+        document.write(`Початковий масив ${numbers}<br>`)
+                                                                
+        numbers.forEach((num, index) => {                                                                      //Вирішуємо задачу
+            if (num > numbers[0]) {
+            numbers[index] = num * 2
+            }
+        })
+
+        document.write(`Масив після зміни ${numbers}<br>`) */
+
+
+
+        //7.Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.
+
+        /* let numbers = new Array (10)                                                                           // Зробимо масив
+                
+        for (let i = 0; i < numbers.length; i++) {
+            numbers[i] = Math.floor (Math.random () * 2000 +1)          
+        }
+        document.write(`Початковий масив ${numbers}<br>`)
+                                                                
+        numbers.forEach((num, index) => {                                                                          //Вирішуємо задачу
+            if (num > 1000) {
+            numbers[index] = (num * 0.7).toFixed(2)
+            }
+        })
+        document.write(`Масив після зміни ${numbers}<br>`)  */
+
+
+
+        //8. Дано масив номерів авто. Сформувати новий масив тих, які починаються на «А»
+
+        /* let numbers = ["AE2365CA", "BE2357AA", "AT4546EE", "BC5321AB"]                
+        document.write(`Початковий масив ${numbers}<br>`)
+                                                                
+        let newNumbers = numbers.filter((num => {                                                                    
+            return num[0] ==="A"
+        }))
+        document.write(`Масив після зміни ${newNumbers}<br>`)  */
+
+
+
+        //9. Дано масив імен. Сформувати масив з перших літер цих імен.
+
+        /* let names = ["Іван", "Настя", "Оля", "Кирило"]
+        document.write(`Початковий масив ${names}<br>`)
+
+        let firstLetters = names.map (name => name[0])
+        document.write(`Новий масив ${firstLetters}<br>`) */
+
+
+
+        //10. Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде містити величину сплаченого податку у грн.
+
+        /* let prices = new Array (5)                                                                           // Зробимо масив
+                
+        for (let i = 0; i < prices.length; i++) {
+            prices[i] = Math.floor (Math.random () * 100 + 1)          
+        }
+        document.write(`Масив цін ${prices}<br>`)
+
+        let taxRate = 0.20
+
+        let taxAmounts = prices.map (price => (price * taxRate).toFixed(2))
+        document.write(`Масив податку ${taxAmounts}<br>`) */
+
+
+
+
+
+
+
+
+
+            
+    </script>
+    
+</body>
+</html>
