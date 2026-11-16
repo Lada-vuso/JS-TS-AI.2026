@@ -25,14 +25,15 @@
             for (let index = 0; index < productsPrices.length; index++) {
                 if (productsPrices[index] <= budget) {
                     resultMessage.push(productsTitles[index])
-                } else {
-                resultMessage = "жодного товару, нажаль"
                 }
-            }          
-
-
-            // Виводимо результат
-            document.write(`З Вашим бюджетом ${budget} грн. Вам доступні такі товари: ${resultMessage.join(", ")}`) 
+            } 
+            
+            if (resultMessage.length > 0) {                                                                               // Виводимо результат
+                document.write(`З Вашим бюджетом ${budget} грн. Вам доступні такі товари: ${resultMessage.join(", ")}`) 
+            } else {
+                document.write(`За вашого бюджету ${budget} грн. жоден товар недоступний`)
+            }           
+            
         }
     </script>    
 </body>
